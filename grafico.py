@@ -1,10 +1,11 @@
 import pandas as pd
 import streamlit as st
 
-df = pd.read_csv('dados_temperatura.csv')
+df = pd.read_csv('tempo_uso_apps.csv')
 
-st.write("📊 Dados de Temperatura por Mês")
+st.title("📱 Tempo médio gasto por dia em aplicativos")
+st.caption("Dados fictícios, mas provavelmente bem reais pra nossa vida 😅")
+
 st.dataframe(df)
 
-st.bar_chart(data=df, x='mes', y='temperatura')
-
+st.bar_chart(df.set_index('dia'))
